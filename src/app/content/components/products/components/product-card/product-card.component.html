@@ -1,0 +1,33 @@
+<div appMatElevation class="product-card" fxLayout="column" fxLayoutGap="16px">
+  <div fxLayout="column" fxLayout.gt-sm="row">
+    <div class="card-image-container" fxFlex="30" fxLayout="column" fxLayoutAlign="center center" fxFlexOrder.gt-sm="2">
+      <img class="card-image" [src]="product.cardImageProps.src ? product.cardImageProps.src : imagePaths.PRODUCT_PLACEHOLDER" alt="Remote Coach">
+    </div>
+    <div class="card-text-container" fxFlex="70" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="16px" fxFlexOrder.gt-sm="1">
+      <div class="card-title">{{ product.productCardData.name }}</div>
+      <div class="card-subtitle">{{ product.productCardData.tagline }}</div>
+      <div class="card-description">
+        <ul class="description-highlights">
+          <li *ngFor="let highlight of product.productCardData.highlights">{{ highlight }}</li>
+        </ul>
+      </div>
+      <div class="card-actions" fxLayout="column" fxLayoutAlign="center start">
+        <button class="action-button" mat-raised-button color="primary">Learn More</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-actions" fxLayout="row">
+    <button *ngIf="!product.active" [disabled]="!product.readyToActivate" mat-raised-button class="activate-button" color="accent" (click)="onToggleProductActive()">Activate</button>
+    <button *ngIf="product.active" mat-raised-button class="activate-button" color="warn" (click)="onToggleProductActive()">De-Activate</button>
+    <div *ngIf="!product.active" class="other-actions" fxFlex fxLayoutAlign="end center">
+      <button mat-icon-button class="edit-button" (click)="onEditProduct()">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button class="delete-button" (click)="onDelete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+
+</div>

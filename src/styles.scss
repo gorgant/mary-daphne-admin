@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import './app/variables';
+
+html, body { 
+  height: 100%; 
+  min-width: $min-screen-width;
+}
+
+body { 
+  margin: 0; 
+  font-family: 'Roboto', sans-serif, "Helvetica Neue", arial; 
+}
+
+// Set the ck editor (and not the caption of images) min height
+.ck-editor__editable:not(.ck-editor__nested-editable) {
+  min-height: 400px;
+}

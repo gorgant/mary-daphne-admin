@@ -1,0 +1,34 @@
+<mat-card fxLayout="column" fxLayoutAlign="end start">
+  <mat-card-content (click)="onPreviewBlogItem()" >
+    <div *ngIf="post.imageProps">
+      <img class="post-image" [src]="thumbnailSrc" [alt]="post.title">
+    </div>
+    <div *ngIf="!post.imageProps">
+      <img class="post-image" [src]="heroPlaceholderPath">
+    </div>
+    <div class="card-text">
+      <h2>{{ post.title }}</h2>
+      <p><small>Modified by {{ post.author }} &bull; {{ post.modifiedDate | date }}</small></p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions fxLayout="row">
+    <button *ngIf="!post.published" [disabled]="!post.readyToPublish" mat-raised-button class="publish-button" color="accent" (click)="onTogglePublishPost()">Publish</button>
+    <button *ngIf="post.published" mat-raised-button class="publish-button" color="accent" (click)="onTogglePublishPost()">Un-Publish</button>
+    <div *ngIf="post.published" class="other-actions" fxFlex fxLayoutAlign="end center">
+      <button *ngIf="post.featured" mat-icon-button class="edit-button" (click)="onTogglePostFeatured()">
+        <mat-icon>star</mat-icon>
+      </button>
+      <button *ngIf="!post.featured" mat-icon-button class="edit-button" (click)="onTogglePostFeatured()">
+        <mat-icon>star_border</mat-icon>
+      </button>
+    </div>
+    <div *ngIf="!post.published" class="other-actions" fxFlex fxLayoutAlign="end center">
+      <button mat-icon-button class="edit-button" (click)="onSelectBlogItem()">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button class="delete-button" (click)="onDelete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>
