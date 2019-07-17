@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Post } from '../models/posts/post.model';
 import { catchError, tap, take } from 'rxjs/operators';
 
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { throwError } from 'rxjs';
 import { GeographyListService } from './geography-list.service';
-import { Product } from '../models/products/product.model';
-import { AdminFunctionNames } from '../models/routes-and-paths/fb-function-names';
+import { Post } from 'shared-models/posts/post.model';
+import { AdminFunctionNames } from 'shared-models/routes-and-paths/fb-function-names';
+import { Product } from 'shared-models/products/product.model';
 
 @Injectable({
   providedIn: 'root'

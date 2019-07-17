@@ -21,17 +21,29 @@ export enum EmailUnsubscribeGroupIds {
 
 // Set the key to the Product ID Searchable by product ID
 export const ProductEmailTemplates: ProductEmailTemplateList = {
-  [ProductIdList.REMOTE_COACH]: {
+  [ProductIdList.EXPLEARNING_REMOTE_COACH]: {
     templateId: EmailTemplateIds.REMOTE_COACH_PURCHASE_CONFIRMATION,
-    productId: ProductIdList.REMOTE_COACH
+    productId: ProductIdList.EXPLEARNING_REMOTE_COACH
   },
-  [ProductIdList.SANDBOX_REMOTE_COACH]: {
+  [ProductIdList.EXPLEARNING_SANDBOX_REMOTE_COACH]: {
     templateId: EmailTemplateIds.REMOTE_COACH_PURCHASE_CONFIRMATION,
-    productId: ProductIdList.SANDBOX_REMOTE_COACH
+    productId: ProductIdList.EXPLEARNING_SANDBOX_REMOTE_COACH
   },
-  [ProductIdList.SANDBOX_ANOTHER_COOL_PRODUCT]: {
+  [ProductIdList.EXPLEARNING_SANDBOX_ANOTHER_COOL_PRODUCT]: {
     templateId: EmailTemplateIds.REMOTE_COACH_PURCHASE_CONFIRMATION,
-    productId: ProductIdList.SANDBOX_REMOTE_COACH
+    productId: ProductIdList.EXPLEARNING_SANDBOX_REMOTE_COACH
+  },
+  [ProductIdList.MARY_DAPHNE_REMOTE_COACH]: {
+    templateId: EmailTemplateIds.REMOTE_COACH_PURCHASE_CONFIRMATION,
+    productId: ProductIdList.MARY_DAPHNE_REMOTE_COACH
+  },
+  [ProductIdList.MARY_DAPHNE_SANDBOX_REMOTE_COACH]: {
+    templateId: EmailTemplateIds.REMOTE_COACH_PURCHASE_CONFIRMATION,
+    productId: ProductIdList.MARY_DAPHNE_SANDBOX_REMOTE_COACH
+  },
+  [ProductIdList.MARY_DAPHNE_SANDBOX_ANOTHER_COOL_PRODUCT]: {
+    templateId: EmailTemplateIds.REMOTE_COACH_PURCHASE_CONFIRMATION,
+    productId: ProductIdList.MARY_DAPHNE_SANDBOX_REMOTE_COACH
   }
 };
 

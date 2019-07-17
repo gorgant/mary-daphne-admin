@@ -6,7 +6,7 @@ import { currentEnvironmentType } from '../environments/config';
 export const adminApp = admin.initializeApp();
 
 // Access to public app requires admin service account to be added to public IAM
-export const getExplearningApp = () => {
+export const getExplearningPublicApp = () => {
   let app: admin.app.App;
 
   switch (currentEnvironmentType) {
@@ -33,7 +33,7 @@ export const getExplearningApp = () => {
 };
 
 // Access to Mary Daphne app requires admin service account to be added to Mary Daphne public IAM
-export const getMaryDaphneApp = () => {
+export const getMaryDaphnePublicApp = () => {
   let app: admin.app.App;
 
   switch (currentEnvironmentType) {

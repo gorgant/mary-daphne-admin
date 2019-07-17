@@ -41,16 +41,16 @@ const setBucketsBasedOnEnvironment = (): void => {
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
-      blogBucket = adminStorage.bucket(ProductionCloudStorage.EXPLEARNING_ADMIN_BLOG_STORAGE_AF_CF);
-      productsBucket = adminStorage.bucket(ProductionCloudStorage.EXPLEARNING_ADMIN_PRODUCTS_STORAGE_AF_CF);
+      blogBucket = adminStorage.bucket(ProductionCloudStorage.MARY_DAPHNE_ADMIN_BLOG_STORAGE_AF_CF);
+      productsBucket = adminStorage.bucket(ProductionCloudStorage.MARY_DAPHNE_ADMIN_PRODUCTS_STORAGE_AF_CF);
       break;
     case EnvironmentTypes.SANDBOX:
-      blogBucket = adminStorage.bucket(SandboxCloudStorage.EXPLEARNING_ADMIN_BLOG_STORAGE_AF_CF);
-      productsBucket = adminStorage.bucket(SandboxCloudStorage.EXPLEARNING_ADMIN_PRODUCTS_STORAGE_AF_CF);
+      blogBucket = adminStorage.bucket(SandboxCloudStorage.MARY_DAPHNE_ADMIN_BLOG_STORAGE_AF_CF);
+      productsBucket = adminStorage.bucket(SandboxCloudStorage.MARY_DAPHNE_ADMIN_PRODUCTS_STORAGE_AF_CF);
       break;
     default:
-      blogBucket = adminStorage.bucket(SandboxCloudStorage.EXPLEARNING_ADMIN_BLOG_STORAGE_AF_CF);
-      productsBucket = adminStorage.bucket(SandboxCloudStorage.EXPLEARNING_ADMIN_PRODUCTS_STORAGE_AF_CF);
+      blogBucket = adminStorage.bucket(SandboxCloudStorage.MARY_DAPHNE_ADMIN_BLOG_STORAGE_AF_CF);
+      productsBucket = adminStorage.bucket(SandboxCloudStorage.MARY_DAPHNE_ADMIN_PRODUCTS_STORAGE_AF_CF);
       break;
   }
 }

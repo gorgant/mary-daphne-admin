@@ -9,13 +9,13 @@ const getAdminProjectId = (): string => {
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
-      projectId = PRODUCTION_APPS.explearningAdminApp.projectId
+      projectId = PRODUCTION_APPS.maryDaphneAdminApp.projectId
       break;
     case EnvironmentTypes.SANDBOX:
-      projectId = SANDBOX_APPS.explearningAdminApp.projectId
+      projectId = SANDBOX_APPS.maryDaphneAdminApp.projectId
       break;
     default:
-      projectId = SANDBOX_APPS.explearningAdminApp.projectId
+      projectId = SANDBOX_APPS.maryDaphneAdminApp.projectId
       break;
   }
   return projectId;
@@ -27,13 +27,13 @@ const getPublicAppUrl = (): string => {
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
-      appUrl = PRODUCTION_APPS.explearningPublicApp.websiteDomain;
+      appUrl = PRODUCTION_APPS.maryDaphnePublicApp.websiteDomain;
       break;
     case EnvironmentTypes.SANDBOX:
-      appUrl = SANDBOX_APPS.explearningPublicApp.websiteDomain;
+      appUrl = SANDBOX_APPS.maryDaphnePublicApp.websiteDomain;
       break;
     default:
-      appUrl = SANDBOX_APPS.explearningPublicApp.websiteDomain;
+      appUrl = SANDBOX_APPS.maryDaphnePublicApp.websiteDomain;
       break;
   }
   return appUrl
@@ -45,13 +45,13 @@ const getRemoteCoachId = (): string => {
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
-      remoteCoachId = ProductIdList.REMOTE_COACH
+      remoteCoachId = ProductIdList.MARY_DAPHNE_REMOTE_COACH
       break;
     case EnvironmentTypes.SANDBOX:
-      remoteCoachId = ProductIdList.SANDBOX_REMOTE_COACH;
+      remoteCoachId = ProductIdList.MARY_DAPHNE_SANDBOX_REMOTE_COACH;
       break;
     default:
-      remoteCoachId = ProductIdList.SANDBOX_REMOTE_COACH;
+      remoteCoachId = ProductIdList.MARY_DAPHNE_SANDBOX_REMOTE_COACH;
       break;
   }
   return remoteCoachId
