@@ -48,16 +48,20 @@ export const ProductEmailTemplates: ProductEmailTemplateList = {
 };
 
 export enum EmailSenderAddresses {
-  DEFAULT = 'hello@myexplearning.com',
-  ORDERS = 'orders@myexplearning.com'
-
+  EXPLEARNING_DEFAULT = 'hello@myexplearning.com',
+  EXPLEARNING_ORDERS = 'orders@myexplearning.com',
+  MARY_DAPHNE_DEFAULT = 'hello@marydaphne.com',
+  MARY_DAPHNE_ORDERS = 'orders@marydaphne.com'
 }
 
 export enum EmailSenderNames {
-  DEFAULT = 'Explearning'
+  EXPLEARNING_DEFAULT = 'Explearning',
+  MARY_DAPHNE_DEFAULT = 'Mary Daphne'
 }
 
 export const AdminEmailAddresses = {
-  GREG_ONLY: 'greg@myexplearning.com',
-  GREG_AND_MD: ['greg@myexplearning.com, marydaphne@myexplearning.com']
+  EXPLEARNING_GREG_ONLY: 'greg@myexplearning.com',
+  EXPLEARNING_GREG_AND_MD: ['greg@myexplearning.com, marydaphne@myexplearning.com'],
+  MARY_DAPHNE_GREG_ONLY: 'greg@marydaphne.com',
+  MARY_DAPHNE_GREG_AND_MD: ['greg@marydaphne.com, marydaphne@marydaphne.com']
 };

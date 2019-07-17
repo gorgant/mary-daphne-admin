@@ -1,15 +1,15 @@
 import * as functions from 'firebase-functions';
 import { Post } from '../../../shared-models/posts/post.model';
 import { SharedCollectionPaths } from '../../../shared-models/routes-and-paths/fb-collection-paths';
-import { explearningPublicFirestore, maryDaphnePublicFirestore } from '../db';
+import { maryDaphnePublicFirestore } from '../db';
 import { BlogDomains } from '../../../shared-models/posts/blog-domains.model';
 
 const publishPost = async (post: Post) => {
 
-  let db: FirebaseFirestore.Firestore = explearningPublicFirestore;
+  let db: FirebaseFirestore.Firestore = maryDaphnePublicFirestore;
 
-  // Switch to Mary Daphne firestore if flagged
-  if (post.blogDomain === BlogDomains.MARY_DAPHNE) {
+  // Switch to Explearning firestore if flagged
+  if (post.blogDomain === BlogDomains.EXPLEARNING) {
     db = maryDaphnePublicFirestore;
   }
   console.log('Public firestore', db);
