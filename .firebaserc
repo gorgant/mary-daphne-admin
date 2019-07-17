@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "marydaphne-admin",
+    "sandbox-admin": "marydaphne-sandbox-admin"
+  }
+}

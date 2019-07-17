@@ -14,3 +14,6 @@ body {
 .ck-editor__editable:not(.ck-editor__nested-editable) {
   min-height: 400px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

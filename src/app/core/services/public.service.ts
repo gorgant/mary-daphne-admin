@@ -95,4 +95,18 @@ export class PublicService {
       });
   }
 
+  sendSendgridTest() {
+    const sendgridHttpCall = this.fns.httpsCallable('sendGridTest');
+
+    sendgridHttpCall('')
+      .pipe(
+        take(1),
+        tap(response => console.log('Sendgrid test sent', response)),
+        catchError(error => {
+          console.log('Error with sendgrid test', error);
+          return throwError(error);
+        })
+      ).subscribe();
+  }
+
 }

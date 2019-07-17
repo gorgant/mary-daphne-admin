@@ -12,8 +12,8 @@ import { withLatestFrom } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'admin';
-  appVersion = '1.7.2';
+  title = 'Admin - Mary Daphne';
+  appVersion = '1.0.0';
 
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
 
