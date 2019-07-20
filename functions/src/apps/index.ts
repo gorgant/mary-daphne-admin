@@ -13,19 +13,19 @@ export const getExplearningPublicApp = () => {
     case EnvironmentTypes.PRODUCTION:
       app = admin.initializeApp(
         PRODUCTION_APPS.explearningPublicApp,
-        'public'
+        'explearningPublicApp'
       );
       break;
     case EnvironmentTypes.SANDBOX:
       app = admin.initializeApp(
         SANDBOX_APPS.explearningPublicApp,
-        'public'
+        'explearningPublicApp'
       );
       break;
     default:
       app = admin.initializeApp(
         SANDBOX_APPS.explearningPublicApp,
-        'public'
+        'explearningPublicApp'
       );
       break;
   }
@@ -40,19 +40,19 @@ export const getMaryDaphnePublicApp = () => {
     case EnvironmentTypes.PRODUCTION:
       app = admin.initializeApp(
         PRODUCTION_APPS.maryDaphnePublicApp,
-        'maryDaphnePublic'
+        'maryDaphnePublicApp'
       );
       break;
     case EnvironmentTypes.SANDBOX:
       app = admin.initializeApp(
         SANDBOX_APPS.maryDaphnePublicApp,
-        'maryDaphnePublic'
+        'maryDaphnePublicApp'
       );
       break;
     default:
       app = admin.initializeApp(
         SANDBOX_APPS.maryDaphnePublicApp,
-        'maryDaphnePublic'
+        'maryDaphnePublicApp'
       );
       break;
   }

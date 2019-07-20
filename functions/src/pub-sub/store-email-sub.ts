@@ -20,7 +20,7 @@ const sendSubConfirmationEmail = async (subscriber: EmailSubscriber) => {
   let toEmail: string;
   let bccEmail: string;
   const templateId: string = EmailTemplateIds.MARY_DAPHNE_SUBSCRIPTION_CONFIRMATION;
-  const unsubscribeGroupId: number = EmailUnsubscribeGroupIds.EXPLEARNING_COMMUNICATIONS_STRATEGIES;
+  const unsubscribeGroupId: number = EmailUnsubscribeGroupIds.MARY_DAPHNE_COMMUNICATIONS_STRATEGIES;
   let categories: string[];
   
   switch (currentEnvironmentType) {
