@@ -3,9 +3,9 @@ import { Order } from '../../../shared-models/orders/order.model';
 import { adminFirestore } from '../db';
 import { AdminCollectionPaths } from '../../../shared-models/routes-and-paths/fb-collection-paths';
 import { AdminFunctionNames } from '../../../shared-models/routes-and-paths/fb-function-names';
-import { getSgMail, getProductUrlById } from '../sendgrid/config';
+import { getSgMail } from '../sendgrid/config';
 import { EmailSenderAddresses, EmailSenderNames, AdminEmailAddresses, EmailCategories, ProductEmailTemplates } from '../../../shared-models/email/email-vars.model';
-import { currentEnvironmentType } from '../environments/config';
+import { currentEnvironmentType, getProductUrlById } from '../environments/config';
 import { EnvironmentTypes } from '../../../shared-models/environments/env-vars.model';
 import { MailData } from '@sendgrid/helpers/classes/mail';
 
