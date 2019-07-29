@@ -1,7 +1,7 @@
 import * as functions from 'firebase-functions';
 import { adminFirestore } from '../db';
 import * as sendGridMail from '@sendgrid/mail';
-import { maryDaphnePublicAppUrl, remoteCoachProductId, remoteCoachProductSlug } from '../environments/config';
+import { publicAppUrl, remoteCoachProductId, remoteCoachProductSlug } from '../environments/config';
 import { PublicAppRoutes } from '../../../shared-models/routes-and-paths/app-routes.model';
 
 // Iniitialize Cloud Firestore Database
@@ -21,7 +21,7 @@ export const getSgMail = () => {
 
 
 // Useful links for emails
-const appUrl = maryDaphnePublicAppUrl;
+const appUrl = publicAppUrl;
 const blogSlugWithSlashPrefix = PublicAppRoutes.BLOG;
 const blogUrl = `https://${appUrl}${blogSlugWithSlashPrefix}`;
 const productListSlugWithSlashPrefix = PublicAppRoutes.PRODUCTS;
