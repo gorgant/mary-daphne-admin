@@ -22,3 +22,5 @@ export { backupAdminDatabase } from './pub-sub/backup-admin-database';
 export { sgEmailWebhookEndpoint } from './sendgrid/webhooks';
 
 export { sendGridTest } from './sendgrid/sendgrid-test';
+
+export { autoPublishBlogPosts } from './cron-jobs/auto-publish-blog-posts';
