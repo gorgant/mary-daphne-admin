@@ -7,9 +7,9 @@ export { createAdminUser } from './local/create-admin-user';
 
 export { updatePublicBlogPost } from './public/update-public-blog-post';
 
-export { updateGeographicData } from './public/update-geographic-data';
-
 export { updateProduct } from './public/update-product';
+
+export { updateGeographicData } from './public/update-geographic-data';
 
 export { storeOrder } from './pub-sub/store-order';
 
@@ -21,6 +21,8 @@ export { backupAdminDatabase } from './pub-sub/backup-admin-database';
 
 export { sgEmailWebhookEndpoint } from './sendgrid/webhooks';
 
-export { sendGridTest } from './sendgrid/sendgrid-test';
-
 export { autoPublishBlogPosts } from './cron-jobs/auto-publish-blog-posts';
+
+export { sendSendgridTest } from './sendgrid/send-sendgrid-test';
+
+export { updateSendgridContact } from './sendgrid/update-sendgrid-contact';
