@@ -1,39 +1,35 @@
 import * as admin from 'firebase-admin';
 import { EnvironmentTypes, PRODUCTION_APPS, SANDBOX_APPS } from '../../../shared-models/environments/env-vars.model';
-import { currentEnvironmentType } from '../environments/config';
+import { currentEnvironmentType } from './environments-config';
+import * as functions from 'firebase-functions';
 
-// Local app intialization will automatically select sandbox or production based on which environment initialized it
-export const adminApp = admin.initializeApp();
 
 // Access to public app requires admin service account to be added to public IAM
-export const getExplearningPublicApp = () => {
+const getMaryDaphneAdminApp = () => {
   let app: admin.app.App;
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
       app = admin.initializeApp(
-        PRODUCTION_APPS.explearningPublicApp,
-        'explearningPublicApp'
+        PRODUCTION_APPS.maryDaphneAdminApp,
+        'maryDaphneAdminApp'
       );
       break;
     case EnvironmentTypes.SANDBOX:
       app = admin.initializeApp(
-        SANDBOX_APPS.explearningPublicApp,
-        'explearningPublicApp'
+        SANDBOX_APPS.maryDaphneAdminApp,
+        'maryDaphneAdminApp'
       );
       break;
     default:
-      app = admin.initializeApp(
-        SANDBOX_APPS.explearningPublicApp,
-        'explearningPublicApp'
-      );
-      break;
+      throw new functions.https.HttpsError('failed-precondition', `No environment type detected when creating admin app`);
   }
   return app;
 };
+export const maryDaphneAdminApp = getMaryDaphneAdminApp();
 
-// Access to Mary Daphne app requires admin service account to be added to Mary Daphne public IAM
-export const getMaryDaphnePublicApp = () => {
+// Access to public app requires admin service account to be added to public IAM
+const getMaryDaphnePublicApp = () => {
   let app: admin.app.App;
 
   switch (currentEnvironmentType) {
@@ -50,11 +46,8 @@ export const getMaryDaphnePublicApp = () => {
       );
       break;
     default:
-      app = admin.initializeApp(
-        SANDBOX_APPS.maryDaphnePublicApp,
-        'maryDaphnePublicApp'
-      );
-      break;
+      throw new functions.https.HttpsError('failed-precondition', `No environment type detected when creating public app`);
   }
   return app;
 };
+export const maryDaphnePublicApp = getMaryDaphnePublicApp();
