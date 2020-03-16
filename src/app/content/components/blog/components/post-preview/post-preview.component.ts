@@ -109,13 +109,13 @@ export class PostPreviewComponent implements OnInit, OnDestroy {
   private setYouTubeIframeOriginBasedOnEnvironment(): string {
     switch (this.productionEnvironment) {
       case true:
-        this.origin = PRODUCTION_APPS.explearningPublicApp.websiteDomain;
+        this.origin = PRODUCTION_APPS.maryDaphnePublicApp.websiteDomain;
         break;
       case false:
-        this.origin = SANDBOX_APPS.explearningPublicApp.websiteDomain;
+        this.origin = SANDBOX_APPS.maryDaphnePublicApp.websiteDomain;
         break;
       default:
-        this.origin = SANDBOX_APPS.explearningPublicApp.websiteDomain;
+        this.origin = SANDBOX_APPS.maryDaphnePublicApp.websiteDomain;
         break;
     }
     return this.origin;
