@@ -1,20 +1,20 @@
 import { Component, OnInit, SecurityContext, OnDestroy, Renderer2, Inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-import { withLatestFrom, map } from 'rxjs/operators';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { RootStoreState, PostStoreSelectors, PostStoreActions } from 'src/app/root-store';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { withLatestFrom, map } from 'rxjs/operators';
 import { Post } from 'shared-models/posts/post.model';
 import { PageHeroData } from 'shared-models/forms-and-components/page-hero-data.model';
-import { DOCUMENT } from '@angular/common';
-import { PRODUCTION_APPS, SANDBOX_APPS } from 'shared-models/environments/env-vars.model';
 import { PublicAppRoutes } from 'shared-models/routes-and-paths/app-routes.model';
+import { PRODUCTION_APPS, SANDBOX_APPS } from 'shared-models/environments/env-vars.model';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-post-preview',
   templateUrl: './post-preview.component.html',
-  styleUrls: ['./post-preview.component.scss'],
+  styleUrls: ['./post-preview.component.scss']
 })
 export class PostPreviewComponent implements OnInit, OnDestroy {
 
@@ -64,11 +64,12 @@ export class PostPreviewComponent implements OnInit, OnDestroy {
 
   // Triggered after params are fetched
   private getPost() {
-    this.error$ = this.store$.select(PostStoreSelectors.selectPostError);
+    this.error$ = this.store$.select(PostStoreSelectors.selectLoadError);
+    this.isLoading$ = this.store$.select(PostStoreSelectors.selectIsLoading);
     this.post$ = this.store$.select(PostStoreSelectors.selectPostById(this.postId))
     .pipe(
       withLatestFrom(
-        this.store$.select(PostStoreSelectors.selectPostsLoaded)
+        this.store$.select(PostStoreSelectors.selectLoaded)
       ),
       map(([post, postsLoaded]) => {
         // Check if items are loaded, if not fetch from server
@@ -81,13 +82,7 @@ export class PostPreviewComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.error$ = this.store$.select(
-      PostStoreSelectors.selectPostError
-    );
 
-    this.isLoading$ = this.store$.select(
-      PostStoreSelectors.selectPostIsLoading
-    );
   }
 
   // If post data available, patch values into form
@@ -172,7 +167,7 @@ export class PostPreviewComponent implements OnInit, OnDestroy {
     console.log('Initializing hero data with this post', post);
     this.heroData = {
       pageTitle: post.title,
-      pageSubtitle: null,
+      pageHeroSubtitle: null,
       imageProps: post.imageProps,
       actionMessage: 'Read More',
       isPost: true
@@ -196,6 +191,7 @@ export class PostPreviewComponent implements OnInit, OnDestroy {
     if (this.errorSubscription) {
       this.errorSubscription.unsubscribe();
     }
+
   }
 
 }
