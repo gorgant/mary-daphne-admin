@@ -51,3 +51,53 @@ const getMaryDaphnePublicApp = () => {
   return app;
 };
 export const maryDaphnePublicApp = getMaryDaphnePublicApp();
+
+const getAltEnvironmentMaryDaphneAdminApp = () => {
+
+  let app: admin.app.App;
+
+  switch (currentEnvironmentType) {
+    case EnvironmentTypes.PRODUCTION:
+      app = admin.initializeApp(
+        SANDBOX_APPS.maryDaphneAdminApp,
+        'altMaryDaphneAdminApp'
+      );
+      break;
+    case EnvironmentTypes.SANDBOX:
+      app = admin.initializeApp(
+        PRODUCTION_APPS.maryDaphneAdminApp,
+        'altMaryDaphneAdminApp'
+      );
+      break;
+    default:
+      throw new functions.https.HttpsError('failed-precondition', `No environment type detected when creating alt admin app`);
+  }
+  return app;
+}
+
+export const altEnvironmentMaryDaphneAdminApp = getAltEnvironmentMaryDaphneAdminApp();
+
+const getAltEnvironmentMaryDaphnePublicApp = () => {
+
+  let app: admin.app.App;
+
+  switch (currentEnvironmentType) {
+    case EnvironmentTypes.PRODUCTION:
+      app = admin.initializeApp(
+        SANDBOX_APPS.maryDaphnePublicApp,
+        'altMaryDaphnePublicApp'
+      );
+      break;
+    case EnvironmentTypes.SANDBOX:
+      app = admin.initializeApp(
+        PRODUCTION_APPS.maryDaphnePublicApp,
+        'altMaryDaphnePublicApp'
+      );
+      break;
+    default:
+      throw new functions.https.HttpsError('failed-precondition', `No environment type detected when creating alt public app`);
+  }
+  return app;
+}
+
+export const altEnvironmentMaryDaphnePublicApp = getAltEnvironmentMaryDaphnePublicApp();
