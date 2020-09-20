@@ -80,8 +80,8 @@ export const sendWelcomeEmail = async (subscriber: EmailSubscriber) => {
       remoteCoachUrl: EmailWebsiteLinks.REMOTE_COACH_URL,
       replyEmailAddress: fromEmail,
       webcoursesUrl: EmailWebsiteLinks.WEBCOURSES_URL,
-      downloadableUrl: DownloadableUrls.SYW_DOWNLOADABLE,
-      youTubeChannelUrl: SocialUrls.SYW_YOUTUBE
+      downloadableUrl: DownloadableUrls.MARY_DAPHNE_DOWNLOADABLE,
+      youTubeChannelUrl: SocialUrls.MARY_DAPHNE_YOUTUBE
     },
     trackingSettings: {
       subscriptionTracking: {

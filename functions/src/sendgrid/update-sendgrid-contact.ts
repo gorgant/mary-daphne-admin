@@ -18,7 +18,7 @@ const pubSub = new PubSub();
 const db = adminFirestore;
 const sendgridApiKey = sendgridSecret;
 const contactsApiUrl = 'https://api.sendgrid.com/v3/marketing/contacts';
-const newsletterListId = EmailContactListIds.MARY_DAPHNE_COMMUNICATIONS_STRATEGIES;
+const newsletterListId = EmailContactListIds.MARY_DAPHNE_PRIMARY_NEWSLETTER;
 const wildcardParamKey = 'subscriberId'; // Can use any value here, will represent the doc ID
 
 const submitRequest = async (requestOptions: request.Options): Promise<{}> => {
@@ -209,7 +209,6 @@ const createOrUpdateSendgridContact = async (subscriber: EmailSubscriber): Promi
     list_ids: [ 
       newsletterListId,
       subscriber.subscriptionSources.includes(SubscriptionSource.WAIT_LIST_EXECUTIVE_PRESENCE) ? EmailContactListIds.MARY_DAPHNE_EXECUTIVE_PRESENCE_WAIT_LIST : '',
-      subscriber.subscriptionSources.includes(SubscriptionSource.WAIT_LIST_REMOTE_WORK) ? EmailContactListIds.MARY_DAPHNE_REMOTE_WORK_WAIT_LIST : '',
     ],
     contacts: [ 
       { 
