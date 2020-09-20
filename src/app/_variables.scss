@@ -2,7 +2,7 @@
 @import '~@angular/material/theming';
 
 // Copied from theme.scss
-$admin-primary: (
+$mary-daphne-primary: (
     50 : #e0f2f1,
     100 : #b3e0db,
     200 : #80cbc4,
@@ -35,7 +35,7 @@ $admin-primary: (
     )
 );
 
-$admin-accent: (
+$mary-daphne-accent: (
     50 : #fae0fe,
     100 : #f2b3fd,
     200 : #ea80fc,
@@ -68,8 +68,8 @@ $admin-accent: (
     )
 );
 
-$theme-primary: mat-palette($admin-primary);
-$theme-accent:  mat-palette($admin-accent);
+$theme-primary: mat-palette($mary-daphne-primary);
+$theme-accent:  mat-palette($mary-daphne-accent);
 $theme-warn:    mat-palette($mat-red);
 
 // Create your Sass color vars (will be available in all the project)
@@ -84,6 +84,10 @@ $font-weight-bold: 700;
 $font-weight-black: 900;
 
 $logo-font-family: Satisfy;
+$logo-font-default-size: 40px;
+$logo-font-mobile-size: 35px;
+// Color from here: https://blog.union.io/code/2017/08/10/img-svg-fill/ && https://codepen.io/sosuke/pen/Pjoqqp
+$svg-color-filter: brightness(0) saturate(100%) invert(36%) sepia(80%) saturate(4642%) hue-rotate(158deg) brightness(99%) contrast(101%);
 
 $max-screen-width: 2500px;
 $min-screen-width: 320px;

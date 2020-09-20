@@ -3,7 +3,7 @@
 
 
 // Generated from: http://mcg.mbitson.com
-$admin-primary: (
+$mary-daphne-primary: (
     50 : #e0f2f1,
     100 : #b3e0db,
     200 : #80cbc4,
@@ -36,7 +36,7 @@ $admin-primary: (
     )
 );
 
-$admin-accent: (
+$mary-daphne-accent: (
     50 : #fae0fe,
     100 : #f2b3fd,
     200 : #ea80fc,
@@ -69,9 +69,9 @@ $admin-accent: (
     )
 );
 
-$admin-palette-primary: mat-palette($admin-primary);
-$admin-palette-accent:  mat-palette($admin-accent);
+$mary-daphne-palette-primary: mat-palette($mary-daphne-primary);
+$mary-daphne-palette-accent:  mat-palette($mary-daphne-accent);
 
-$admin-theme: mat-light-theme($admin-palette-primary, $admin-palette-accent);
+$mary-daphne-theme: mat-light-theme($mary-daphne-palette-primary, $mary-daphne-palette-accent);
 
-@include angular-material-theme($admin-theme);
+@include angular-material-theme($mary-daphne-theme);
