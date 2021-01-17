@@ -5,18 +5,18 @@ import * as functions from 'firebase-functions';
 
 
 // Access to public app requires admin service account to be added to public IAM
-const getMaryDaphneAdminStorage = (): Storage => {
+const getMdlsAdminStorage = (): Storage => {
   let storageConstructor: Storage;
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
       storageConstructor = new Storage({
-        projectId: PRODUCTION_APPS.maryDaphneAdminApp.projectId
+        projectId: PRODUCTION_APPS.mdlsAdminApp.projectId
       });
       break;
     case EnvironmentTypes.SANDBOX:
       storageConstructor = new Storage({
-        projectId: SANDBOX_APPS.maryDaphneAdminApp.projectId
+        projectId: SANDBOX_APPS.mdlsAdminApp.projectId
       });
       break;
     default:
@@ -24,21 +24,21 @@ const getMaryDaphneAdminStorage = (): Storage => {
   }
   return storageConstructor;
 };
-export const maryDaphneAdminStorage = getMaryDaphneAdminStorage();
+export const mdlsAdminStorage = getMdlsAdminStorage();
 
 // Access to public app requires admin service account to be added to public IAM
-const getMaryDaphnePublicStorage = (): Storage => {
+const getMdlsPublicStorage = (): Storage => {
   let storageConstructor: Storage;
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
       storageConstructor = new Storage({
-        projectId: PRODUCTION_APPS.maryDaphnePublicApp.projectId
+        projectId: PRODUCTION_APPS.mdlsPublicApp.projectId
       });
       break;
     case EnvironmentTypes.SANDBOX:
       storageConstructor = new Storage({
-        projectId: SANDBOX_APPS.maryDaphnePublicApp.projectId
+        projectId: SANDBOX_APPS.mdlsPublicApp.projectId
       });
       break;
     default:
@@ -46,4 +46,4 @@ const getMaryDaphnePublicStorage = (): Storage => {
   }
   return storageConstructor;
 };
-export const maryDaphnePublicStorage = getMaryDaphnePublicStorage();
+export const mdlsPublicStorage = getMdlsPublicStorage();

@@ -15,7 +15,7 @@ import { EnvironmentTypes, ProductionCloudStorage, SandboxCloudStorage } from '.
 import { currentEnvironmentType } from '../config/environments-config';
 import { Post } from '../../../shared-models/posts/post.model';
 import { assertUID } from '../config/global-helpers';
-import { maryDaphneAdminStorage } from '../config/storage-config';
+import { mdlsAdminStorage } from '../config/storage-config';
 
 interface ResizeImageDataObject {
   fileName: string;
@@ -37,7 +37,7 @@ const blogInlineImages = [ 300, 700 ]
 const productCardSizes = [ 300 ]
 const productHeroSizes = [ 500, 1500 ]
 
-const adminStorage = maryDaphneAdminStorage;
+const adminStorage = mdlsAdminStorage;
 
 let blogBucket: Bucket;
 let productsBucket: Bucket;
@@ -46,16 +46,16 @@ const setBucketsBasedOnEnvironment = (): void => {
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
-      blogBucket = adminStorage.bucket(ProductionCloudStorage.MARY_DAPHNE_ADMIN_BLOG_STORAGE_AF_CF);
-      productsBucket = adminStorage.bucket(ProductionCloudStorage.MARY_DAPHNE_ADMIN_PRODUCTS_STORAGE_AF_CF);
+      blogBucket = adminStorage.bucket(ProductionCloudStorage.MDLS_ADMIN_BLOG_STORAGE_AF_CF);
+      productsBucket = adminStorage.bucket(ProductionCloudStorage.MDLS_ADMIN_PRODUCTS_STORAGE_AF_CF);
       break;
     case EnvironmentTypes.SANDBOX:
-      blogBucket = adminStorage.bucket(SandboxCloudStorage.MARY_DAPHNE_ADMIN_BLOG_STORAGE_AF_CF);
-      productsBucket = adminStorage.bucket(SandboxCloudStorage.MARY_DAPHNE_ADMIN_PRODUCTS_STORAGE_AF_CF);
+      blogBucket = adminStorage.bucket(SandboxCloudStorage.MDLS_ADMIN_BLOG_STORAGE_AF_CF);
+      productsBucket = adminStorage.bucket(SandboxCloudStorage.MDLS_ADMIN_PRODUCTS_STORAGE_AF_CF);
       break;
     default:
-      blogBucket = adminStorage.bucket(SandboxCloudStorage.MARY_DAPHNE_ADMIN_BLOG_STORAGE_AF_CF);
-      productsBucket = adminStorage.bucket(SandboxCloudStorage.MARY_DAPHNE_ADMIN_PRODUCTS_STORAGE_AF_CF);
+      blogBucket = adminStorage.bucket(SandboxCloudStorage.MDLS_ADMIN_BLOG_STORAGE_AF_CF);
+      productsBucket = adminStorage.bucket(SandboxCloudStorage.MDLS_ADMIN_PRODUCTS_STORAGE_AF_CF);
       break;
   }
 }

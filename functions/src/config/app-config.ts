@@ -5,20 +5,20 @@ import * as functions from 'firebase-functions';
 
 
 // Access to public app requires admin service account to be added to public IAM
-const getMaryDaphneAdminApp = () => {
+const getMdlsAdminApp = () => {
   let app: admin.app.App;
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
       app = admin.initializeApp(
-        PRODUCTION_APPS.maryDaphneAdminApp,
-        'maryDaphneAdminApp'
+        PRODUCTION_APPS.mdlsAdminApp,
+        'mdlsAdminApp'
       );
       break;
     case EnvironmentTypes.SANDBOX:
       app = admin.initializeApp(
-        SANDBOX_APPS.maryDaphneAdminApp,
-        'maryDaphneAdminApp'
+        SANDBOX_APPS.mdlsAdminApp,
+        'mdlsAdminApp'
       );
       break;
     default:
@@ -26,23 +26,23 @@ const getMaryDaphneAdminApp = () => {
   }
   return app;
 };
-export const maryDaphneAdminApp = getMaryDaphneAdminApp();
+export const mdlsAdminApp = getMdlsAdminApp();
 
 // Access to public app requires admin service account to be added to public IAM
-const getMaryDaphnePublicApp = () => {
+const getMdlsPublicApp = () => {
   let app: admin.app.App;
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
       app = admin.initializeApp(
-        PRODUCTION_APPS.maryDaphnePublicApp,
-        'maryDaphnePublicApp'
+        PRODUCTION_APPS.mdlsPublicApp,
+        'mdlsPublicApp'
       );
       break;
     case EnvironmentTypes.SANDBOX:
       app = admin.initializeApp(
-        SANDBOX_APPS.maryDaphnePublicApp,
-        'maryDaphnePublicApp'
+        SANDBOX_APPS.mdlsPublicApp,
+        'mdlsPublicApp'
       );
       break;
     default:
@@ -50,23 +50,23 @@ const getMaryDaphnePublicApp = () => {
   }
   return app;
 };
-export const maryDaphnePublicApp = getMaryDaphnePublicApp();
+export const mdlsPublicApp = getMdlsPublicApp();
 
-const getAltEnvironmentMaryDaphneAdminApp = () => {
+const getAltEnvironmentMdlsAdminApp = () => {
 
   let app: admin.app.App;
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
       app = admin.initializeApp(
-        SANDBOX_APPS.maryDaphneAdminApp,
-        'altMaryDaphneAdminApp'
+        SANDBOX_APPS.mdlsAdminApp,
+        'altMdlsAdminApp'
       );
       break;
     case EnvironmentTypes.SANDBOX:
       app = admin.initializeApp(
-        PRODUCTION_APPS.maryDaphneAdminApp,
-        'altMaryDaphneAdminApp'
+        PRODUCTION_APPS.mdlsAdminApp,
+        'altMdlsAdminApp'
       );
       break;
     default:
@@ -75,23 +75,23 @@ const getAltEnvironmentMaryDaphneAdminApp = () => {
   return app;
 }
 
-export const altEnvironmentMaryDaphneAdminApp = getAltEnvironmentMaryDaphneAdminApp();
+export const altEnvironmentMdlsAdminApp = getAltEnvironmentMdlsAdminApp();
 
-const getAltEnvironmentMaryDaphnePublicApp = () => {
+const getAltEnvironmentMdlsPublicApp = () => {
 
   let app: admin.app.App;
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
       app = admin.initializeApp(
-        SANDBOX_APPS.maryDaphnePublicApp,
-        'altMaryDaphnePublicApp'
+        SANDBOX_APPS.mdlsPublicApp,
+        'altMdlsPublicApp'
       );
       break;
     case EnvironmentTypes.SANDBOX:
       app = admin.initializeApp(
-        PRODUCTION_APPS.maryDaphnePublicApp,
-        'altMaryDaphnePublicApp'
+        PRODUCTION_APPS.mdlsPublicApp,
+        'altMdlsPublicApp'
       );
       break;
     default:
@@ -100,4 +100,4 @@ const getAltEnvironmentMaryDaphnePublicApp = () => {
   return app;
 }
 
-export const altEnvironmentMaryDaphnePublicApp = getAltEnvironmentMaryDaphnePublicApp();
+export const altEnvironmentMdlsPublicApp = getAltEnvironmentMdlsPublicApp();

@@ -22,8 +22,8 @@ export const sendPurchaseConfirmationEmail = async (order: Order) => {
   functions.logger.log('Sending Purchase Confirmation Email to this subscriber', order.email);
 
   const sgMail = getSgMail();
-  const fromEmail = EmailSenderAddresses.MARY_DAPHNE_ORDERS;
-  const fromName = EmailSenderNames.MARY_DAPHNE_DEFAULT;
+  const fromEmail = EmailSenderAddresses.MDLS_ORDERS;
+  const fromName = EmailSenderNames.MDLS_DEFAULT;
   const toFirstName = order.firstName;
   let toEmail: string;
   let bccEmail: string;
@@ -36,15 +36,15 @@ export const sendPurchaseConfirmationEmail = async (order: Order) => {
     case EnvironmentTypes.PRODUCTION:
       toEmail = order.email;
       categories = [EmailCategories.PURCHASE_CONFIRMATION];
-      bccEmail = AdminEmailAddresses.MARY_DAPHNE_DEFAULT;
+      bccEmail = AdminEmailAddresses.MDLS_DEFAULT;
       break;
     case EnvironmentTypes.SANDBOX:
-      toEmail = AdminEmailAddresses.MARY_DAPHNE_GREG_ONLY;
+      toEmail = AdminEmailAddresses.MDLS_GREG_ONLY;
       categories = [EmailCategories.PURCHASE_CONFIRMATION, EmailCategories.TEST_SEND];
       bccEmail = '';
       break;
     default:
-      toEmail = AdminEmailAddresses.MARY_DAPHNE_GREG_ONLY;
+      toEmail = AdminEmailAddresses.MDLS_GREG_ONLY;
       categories = [EmailCategories.PURCHASE_CONFIRMATION, EmailCategories.TEST_SEND];
       bccEmail = '';
       break;

@@ -284,7 +284,7 @@ export class PostFormComponent implements OnInit, OnDestroy {
     this.tempPostTitle = `Untitled Post ${this.postId.substr(0, 4)}`;
 
     this.postForm = this.fb.group({
-      [PostKeys.BLOG_DOMAIN]: [BlogDomains.MARY_DAPHNE, Validators.required],
+      [PostKeys.BLOG_DOMAIN]: [BlogDomains.MDLS, Validators.required],
       [PostKeys.TITLE]: ['', Validators.required],
       [PostKeys.VIDEO_URL]: ['', [Validators.pattern(/^\S*(?:https\:\/\/youtu\.be)\S*$/)]],
       [PostKeys.PODCAST_EPISODE_URL]: ['', [Validators.pattern(/^\S*(?:https\:\/\/soundcloud\.com)\S*$/)]],

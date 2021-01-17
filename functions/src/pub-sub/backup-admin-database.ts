@@ -5,10 +5,10 @@ import { now } from 'moment';
 import { EnvironmentTypes, ProductionCloudStorage, SandboxCloudStorage } from '../../../shared-models/environments/env-vars.model';
 import { AdminTopicNames } from '../../../shared-models/routes-and-paths/fb-function-names';
 import { adminProjectId, currentEnvironmentType } from '../config/environments-config';
-import { maryDaphneAdminStorage } from '../config/storage-config';
+import { mdlsAdminStorage } from '../config/storage-config';
 
 const client = new firestore.v1.FirestoreAdminClient();
-const adminStorage = maryDaphneAdminStorage;
+const adminStorage = mdlsAdminStorage;
 
 let backupBucket: Bucket;
 
@@ -16,13 +16,13 @@ const setBucketsBasedOnEnvironment = (): Bucket => {
 
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
-      backupBucket = adminStorage.bucket(ProductionCloudStorage.MARY_DAPHNE_ADMIN_BACKUP_STORAGE_AF_CF);
+      backupBucket = adminStorage.bucket(ProductionCloudStorage.MDLS_ADMIN_BACKUP_STORAGE_AF_CF);
       break;
     case EnvironmentTypes.SANDBOX:
-      backupBucket = adminStorage.bucket(SandboxCloudStorage.MARY_DAPHNE_ADMIN_BACKUP_STORAGE_AF_CF);
+      backupBucket = adminStorage.bucket(SandboxCloudStorage.MDLS_ADMIN_BACKUP_STORAGE_AF_CF);
       break;
     default:
-      backupBucket = adminStorage.bucket(SandboxCloudStorage.MARY_DAPHNE_ADMIN_BACKUP_STORAGE_AF_CF);
+      backupBucket = adminStorage.bucket(SandboxCloudStorage.MDLS_ADMIN_BACKUP_STORAGE_AF_CF);
       break;
   }
 

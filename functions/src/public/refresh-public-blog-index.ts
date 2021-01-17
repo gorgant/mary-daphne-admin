@@ -133,7 +133,7 @@ const createBlogIndex = async () => {
 //   const batch = adminDb.batch();
 
 //   adminPostCollectionSnapshot.docs.forEach( async (doc) => {
-//     const domainUpdate: Partial<Post> = { blogDomain: BlogDomains.MARY_DAPHNE };
+//     const domainUpdate: Partial<Post> = { blogDomain: BlogDomains.MDLS };
 //     batch.update(doc.ref, domainUpdate);
 //   });
 

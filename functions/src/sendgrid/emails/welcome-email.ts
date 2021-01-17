@@ -36,28 +36,28 @@ export const sendWelcomeEmail = async (subscriber: EmailSubscriber) => {
   functions.logger.log('Sending Welcome Email to this subscriber', subscriber.id);
 
   const sgMail = getSgMail();
-  const fromEmail: string = EmailSenderAddresses.MARY_DAPHNE_NEWSLETTER;
-  const fromName: string = EmailSenderNames.MARY_DAPHNE_NEWSLETTER;
+  const fromEmail: string = EmailSenderAddresses.MDLS_NEWSLETTER;
+  const fromName: string = EmailSenderNames.MDLS_NEWSLETTER;
   const toFirstName: string = (subscriber.publicUserData.billingDetails as BillingDetails).firstName;
   let toEmail: string;
   let bccEmail: string;
-  const templateId: string = EmailTemplateIds.MARY_DAPHNE_WELCOME_EMAIL;
-  const unsubscribeGroupId: number = EmailUnsubscribeGroupIds.MARY_DAPHNE_PRIMARY_NEWSLETTER;
+  const templateId: string = EmailTemplateIds.MDLS_WELCOME_EMAIL;
+  const unsubscribeGroupId: number = EmailUnsubscribeGroupIds.MDLS_PRIMARY_NEWSLETTER;
   let categories: string[];
   
   switch (currentEnvironmentType) {
     case EnvironmentTypes.PRODUCTION:
       toEmail = subscriber.id;
       categories = [EmailCategories.WELCOME_EMAIL, EmailCategories.MARKETING_NEWSLETTER];
-      bccEmail = AdminEmailAddresses.MARY_DAPHNE_DEFAULT;
+      bccEmail = AdminEmailAddresses.MDLS_DEFAULT;
       break;
     case EnvironmentTypes.SANDBOX:
-      toEmail = AdminEmailAddresses.MARY_DAPHNE_GREG_ONLY;
+      toEmail = AdminEmailAddresses.MDLS_GREG_ONLY;
       categories = [EmailCategories.WELCOME_EMAIL, EmailCategories.MARKETING_NEWSLETTER, EmailCategories.TEST_SEND];
       bccEmail = '';
       break;
     default:
-      toEmail = AdminEmailAddresses.MARY_DAPHNE_GREG_ONLY;
+      toEmail = AdminEmailAddresses.MDLS_GREG_ONLY;
       categories = [EmailCategories.WELCOME_EMAIL, EmailCategories.MARKETING_NEWSLETTER, EmailCategories.TEST_SEND];
       bccEmail = '';
       break;
@@ -80,8 +80,8 @@ export const sendWelcomeEmail = async (subscriber: EmailSubscriber) => {
       remoteCoachUrl: EmailWebsiteLinks.REMOTE_COACH_URL,
       replyEmailAddress: fromEmail,
       webcoursesUrl: EmailWebsiteLinks.WEBCOURSES_URL,
-      downloadableUrl: DownloadableUrls.MARY_DAPHNE_DOWNLOADABLE,
-      youTubeChannelUrl: SocialUrls.MARY_DAPHNE_YOUTUBE
+      downloadableUrl: DownloadableUrls.MDLS_DOWNLOADABLE,
+      youTubeChannelUrl: SocialUrls.MDLS_YOUTUBE
     },
     trackingSettings: {
       subscriptionTracking: {

@@ -1,6 +1,6 @@
-import { maryDaphneAdminApp, maryDaphnePublicApp, altEnvironmentMaryDaphneAdminApp } from "./app-config";
+import { mdlsAdminApp, mdlsPublicApp, altEnvironmentMdlsAdminApp } from "./app-config";
 
-export const adminFirestore = maryDaphneAdminApp.firestore();
-export const publicFirestore = maryDaphnePublicApp.firestore();
-export const altEnvAdminFirestore = altEnvironmentMaryDaphneAdminApp.firestore();
-export const altEnvPublicFirestore = altEnvironmentMaryDaphneAdminApp.firestore();
+export const adminFirestore = mdlsAdminApp.firestore();
+export const publicFirestore = mdlsPublicApp.firestore();
+export const altEnvAdminFirestore = altEnvironmentMdlsAdminApp.firestore();
+export const altEnvPublicFirestore = altEnvironmentMdlsAdminApp.firestore();
